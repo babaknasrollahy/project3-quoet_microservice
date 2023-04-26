@@ -1,0 +1,100 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: QouteApp-deployment
+  labels:
+    name: qoute-app
+    type: backend
+
+spec:
+  selector:
+    matchLabels:
+      name: qoute-app
+      type: backend
+  replicas: 1
+
+  template:
+    metadata:
+      name: quote-pod
+      labels:
+        name: qoute-app
+        type: backend
+    spec:
+      containers:
+        - name: qoute-container
+          image: babaknasrolahy/quote:latest
+          ports:
+           - containerPort: 5000
+
+
+
+---
+
+
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-deployment
+  labels:
+    name: api-app
+    type: apiserver
+
+spec:
+  selector:
+    matchLabels:
+      name: api-app
+      type: apiserver
+  
+  replicas: 1
+
+  template:
+    metadata:
+     name: api-pod
+     labels:
+      name: api-app
+      type: apiserver
+
+    spec:
+      containers:
+       - name: api-container
+         image: babaknasrolahy/api_qoute:latest
+         ports:
+          containerPort: 3000
+
+
+
+---
+
+
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: front-deployment
+  labels:
+    name: front-app
+    type: frontend
+
+spec:
+
+  selector:
+    matchLabels:
+      name: front-app
+      type: frontend
+  replicas: 1
+
+  template:
+    metadata:
+      name: front-pod
+      labels:
+        name: front-app
+        type: frontend
+
+    spec:
+      containers:
+       - name: front-container
+         image: babaknasrolahy/front_qoute:latest
+         ports:
+          containerPort: 80
+          

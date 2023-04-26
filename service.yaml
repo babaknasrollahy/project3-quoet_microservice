@@ -1,0 +1,54 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: qoute
+
+
+spec:
+  selector:
+    name: qoute-app
+    type: backend
+
+  ports:
+   - port: 5000
+     targetPort: 5000
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: ApiGateway
+
+spec:
+  selector:
+    name: api-app
+    type: apiserver 
+  
+  ports:
+   - port: 3000
+     targetPort: 3000
+
+---
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+
+spec:
+  type: NodePort
+  selector:
+   name: front-app
+   type: frontend
+  
+  ports:
+   - port: 8080
+     targetPort: 80
+     NodePort: 55000
+
+
+    
+
+  
