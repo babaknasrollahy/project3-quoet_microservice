@@ -8,13 +8,13 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 # Copy package.json to work directory
-COPY package*.json ./
+COPY ./ApiGateway/package*.json ./
 
 # Run npm install to install packages
 RUN npm install
 
 # Copy the application
-COPY . /usr/src/app
+COPY ./ApiGateway/ /usr/src/app
 
 # Expose port 3000
 EXPOSE 3000
