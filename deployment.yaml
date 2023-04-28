@@ -60,7 +60,7 @@ spec:
        - name: api-container
          image: babaknasrolahy/api_qoute:latest
          ports:
-          containerPort: 3000
+          - containerPort: 3000
 
 
 
@@ -96,5 +96,5 @@ spec:
        - name: front-container
          image: babaknasrolahy/front_qoute:latest
          ports:
-          containerPort: 80
+          - containerPort: 80
           
