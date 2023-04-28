@@ -1,5 +1,5 @@
 FROM nginx:latest
 
-ADD vhost.conf /etc/nginx/conf.d/default.conf
+ADD ./FrontendApplication/vhost.conf /etc/nginx/conf.d/default.conf
 
-COPY ./dist /var/www
+COPY ./FrontendApplication/dist /var/www
