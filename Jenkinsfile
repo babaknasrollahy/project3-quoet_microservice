@@ -1,7 +1,7 @@
 node('linux')
 {
     stage('Clone_SourceCode'){
-       git branch: 'main', url: 'https://github.com/babaknasrollahy/project3-quoet_microservice.git'
+       git branch: 'master', url: 'https://github.com/babaknasrollahy/project3-quoet_microservice.git'
 
     }
 
