@@ -8,7 +8,7 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 # Copy current directory into the created directory
-COPY . /usr/src/app
+COPY ./QuoteService/ /usr/src/app
 
 # Install all dependencies
 RUN python -mpip install -r requrinments.txt
