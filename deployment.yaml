@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: QouteApp-deployment
+  name: qouteapp-deployment
   labels:
     name: qoute-app
     type: backend
