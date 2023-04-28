@@ -18,7 +18,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: ApiGateway
+  name: api
 
 spec:
   selector:
@@ -46,7 +46,7 @@ spec:
   ports:
    - port: 8080
      targetPort: 80
-     NodePort: 55000
+     nodePort: 55000
 
 
     
