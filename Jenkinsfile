@@ -17,8 +17,8 @@ node('master')
 {
     unstash "COPY"
     stage('Deploy_App'){
-        sh 'echo babak13830 | sudo -S -u babak "kubectl apply -f deployment.yaml" '
-        sh 'echo babak13830 | sudo -S -u babak "kubectl apply -f service.yaml" '
+        sh 'echo babak13830 | sudo -S su -c "kubectl apply -f deployment.yaml" babak '
+        sh 'echo babak13830 | sudo -S su -c "kubectl apply -f service.yaml" babak '
 
     }
 }
