@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: qoute-container
-          image: babaknasrolahy/quote:latest
+          image: babaknasrolahy/qoute:latest
           ports:
            - containerPort: 5000
 
@@ -58,9 +58,12 @@ spec:
     spec:
       containers:
        - name: api-container
-         image: babaknasrolahy/api_qoute:latest
+         image: babaknasrolahy/api_qoute:1.1
          ports:
           - containerPort: 3000
+         env:
+          - name: QUOTES_API
+            value: http://quotes:5000
 
 
 
